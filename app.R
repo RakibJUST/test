@@ -48,6 +48,8 @@ ui <- dashboardPage(
   ),
   dashboardBody(
     tags$head(
+      # --- FAVICON LINE ADDED BELOW ---
+      tags$link(rel = "shortcut icon", href = "favicon.ico"),
       tags$style(HTML("
         .skin-blue .main-header .logo {
           width: 100% !important;
@@ -119,7 +121,7 @@ ui <- dashboardPage(
                     tags$div(style = "font-size: 0.97em; color: #555; margin-bottom:10px;",
                              "Click a country on the map to see its experience-level breakdown on the next tab."
                     ),
-                    plotlyOutput("worldMap", height = "820px")   # Large for 1080p
+                    plotlyOutput("worldMap", height = "650px")   # Reduced map height
                 )
               )
       ),
@@ -138,7 +140,7 @@ ui <- dashboardPage(
                     )
                 ),
                 box(width = 7, status = "primary", solidHeader = FALSE,
-                    plotlyOutput("countryBar", height = "700px")   # Tall for HD
+                    plotlyOutput("countryBar", height = "520px")   # Reduced chart height
                 )
               )
       ),
